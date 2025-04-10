@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World - Go</title>
+    <style>
+      .container {
+        margin: 20px;
+        font-family: Arial, sans-serif;
+      }
+      #result {
+        margin-top: 20px;
+        white-space: pre-wrap;
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>File Upload to WebAssembly</h1>
+      <input type="file" id="fileInput" />
+      <button id="start">开始传输</button>
+      <div id="result">
+        <a>download</a>
+        <img id="qrcode"/>
+      </div>
+    </div>
+    
+    <!-- 
+      The wasm_exec.js must come before our Javascript (index.js), 
+      as it defines some global objects 
+    -->
+    <script src="./wasm_exec.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
